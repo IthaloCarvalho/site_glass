@@ -2,8 +2,18 @@
 
 
 body {
-    background-color: white;
+    background-color: #dddddd;
     color: rgba(0, 0, 0, 1);
+}
+
+/**/
+
+div#interface {
+    width: 900px;
+    background-color: white;
+    margin: -20px auto 0px auto;
+    box-shadow: 0PX 0PX 10PX gray;
+    padding: 10px;
 }
 
 p {
@@ -37,8 +47,18 @@ figure.foto-legenda figcaption {
     transition: opacity 1s;
 }
 
+header#cabecalho img#icone {
+    position: absolute;
+    left: 1230px;
+    top: 40px;
+}
+
 figure.foto-legenda:hover figcaption {
     opacity: 1;
+}
+
+header#cabecalho {
+
 }
 
 /* Formatação do menu*/
@@ -70,11 +90,13 @@ nav#menu li:hover {
 nav#menu h1 {
     display: none;
 }
+
 nav#menu a {
     color: black;
     text-decoration: none;
 
 }
+
 nav#menu a:hover {
     color: #ffffff;
     text-decoration: underline;
