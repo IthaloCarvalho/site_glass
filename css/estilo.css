@@ -131,7 +131,47 @@ section#corpo {
     width: 450px;
     float: left;
     border-right: 1px solid #606060;
-    padding-right: 20px ;
+    padding-right: 20px;
+}
+
+table#tabelaspac {
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaspac caption span {
+    display: block;
+    float: right;
+    color: black;
+    font-size: 8px;
+    margin-top: 12px;
+}
+
+table#tabelaspac td {
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table#tabelaspac td.ce {
+    color: white;
+    background-color: #606060;
+    vertical-align: top;
+    text-align: right;
+}
+
+table#tabelaspac td.cd {
+    background-color: #cecece;
+    text-align: left;
+}
+
+table#tabelaspac caption {
+    color: #888888;
+    font-size: 15px;
+    font-weight: bolder;
 }
 
 aside#lateral {
