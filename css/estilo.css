@@ -15,7 +15,7 @@ body {
 /**/
 
 div#interface {
-    width: 900px;
+    width: 950px;
     background-color: white;
     margin: -20px auto 0px auto;
     box-shadow: 0PX 0PX 10PX gray;
@@ -221,7 +221,7 @@ table#tabelaspac caption {
 
 aside#lateral {
     display: block;
-    width: 350px;
+    width: 400px;
     float: right;
     background-color: #dddddd;
     padding: 10px;
