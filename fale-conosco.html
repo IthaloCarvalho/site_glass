@@ -6,8 +6,15 @@
     <title>Tudo sobre o Google Glass</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/form.css">
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQua').value);
+            tot = qtd * 1500;
+            document.getElementById('cPre').value = tot;
+        }
+    </script>
 </head>
-<script language="javascript" src="javascript/funcoes.js"></script>
+<script src="javascript/funcoes.js"></script>
 
 <body>
     <div id="interface">
@@ -47,33 +54,70 @@
                     </hgroup>
                 </header>
             </article>
-            Identificação do Usuário
-            Nome:
-            Senha:
-            E-mail:
-            Sexo:
-            - Masculino
-            - Feminino
-            Data de Nascimento:
-
-            Endereço do Usuário
-            Logradouro:
-            Número:
-            Estado:
-            Cidade:
-
-            Mensagem do Usuário
-            Grau de Urgência:
-            Mensagem:
-
-            Quero um Google Glass
-            Gostaria de adquirir um Google Glass quando disponível
-            Cor:
-            Quantidade:
-            Preço Total: R$
-
-
-            [BOTÃO ENVIAR]
+            <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
+                <fieldset id="usuario">
+                    <legend> Identificação do Usuário </legend>
+                    <p> <label for="cNome"> Nome: </label> <input type="text" name="tNome" id="cNome" size="30"
+                            maxlength="30" placeholder="Nome Completo"> </p>
+                    <p> <label for="cSenha"> Senha: </label> <input type="password" name="tSenha" id="cSenha" size="8"
+                            maxlength="8" placeholder="8 Caracteres"> </p>
+                    <p> <label for="cEmeil"> E-mail: </label> <input type="email" name="tEmeil" id="cEmeil" size="20"
+                            maxlength="30" placeholder="E-mail"> </p>
+                    <fieldset id="sexo">
+                        <legend> Sexo: </legend>
+                        <input type="radio" name="tSexo" id="cMas"> <label for="cMas"> Masculino </label> <br>
+                        <input type="radio" name="tSexo" id="cFem"> <label for="cFem"> Feminino </label>
+                    </fieldset>
+                    <P> <label for="cData"> Data de Nascimento: </label> <input type="date" name="tData" id="cData">
+                    </P>
+                </fieldset>
+                <fieldset id="endereco">
+                    <legend> Endereço do Usuário </legend>
+                    <p> <label for="cLag"> Logradouro: </label> <input type="text" name="tLag" id="cLag" size="20"
+                            maxlength="50" placeholder="Rua, AV, Trav ..."> </p>
+                    <p> <label for="cNum"> Número: </label> <input type="number" name="tNum" id="cNum" min="0"
+                            max="99999"> </p>
+                    <p> <label for="cEst"> Estado: </label> <select name="tEst" id="cEst">
+                            <optgroup label="Região Sudeste">
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP">São Paulo</option>
+                            </optgroup>
+                            <optgroup label="Região Nordeste">
+                                <option value="CE">Ceara</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="MG">Mina Gerais</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                            </optgroup>
+                        </select> </p>
+                    <p> <label for="cCid"> Cidade: </label> <input type="text" name="tCid" id="cCid" maxlength="40"
+                            size="20" placeholder="Sua Cidade" list="cidades"> </p>
+                    <datalist id="cidades">
+                        <option value="Nova Iguaçu"></option>
+                        <option value="Niterói"></option>
+                        <option value="Belford Roxo"></option>
+                    </datalist>
+                </fieldset>
+                <fieldset id="mensagem">
+                    <legend> Mensagem do Usuário </legend>
+                    <p> <label for="cGru"> Grau de Urgência: </label> Mín <input type="range" name="tGru" id="cGru"
+                            min="0" max="10" step="2"> Máx </p>
+                    <p> <label for="cMen"> Mensagem: </label> <textarea name="tMen" id="cMen" cols="35" rows="5"
+                            placeholder="Deixe aqui sua mensagem..."></textarea> </p>
+                </fieldset>
+                <fieldset id="pedido">
+                    <legend> Quero um Google Glass </legend>
+                    <p> <input type="checkbox" name="tGos" id="cGos" checked> <label for="cGos"> Gostaria de adquirir um
+                            Google Glass quando disponível </label> </p>
+                    <p> <label for="cCor"> Cor: </label> <input type="color" name="tCor" id="cCor" value="#000000"> </p>
+                    <p> <label for="cQua"> Quantidade: </label> <input type="number" name="tQua" id="cQua" min="0"
+                            max="5" value="0"> </p>
+                    <p> <label for="cPre"> Preço Total: R$ </label> <input type="text" name="tPre" id="cPre"
+                            placeholder="Total a Pagar" readonly> </p>
+                </fieldset>
+                <input type="image" name="tBotao" src="imagens/botao-enviar.png">
+            </form>
         </section>
         <footer id="rodape">
             <p>Copyright 2013 - by Ithalo Carvalho <br />
